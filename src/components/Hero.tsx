@@ -2,18 +2,27 @@
 
 export default function Hero() {
   return (
-    <section className="pt-32 pb-16 md:pt-36 md:pb-20 px-6 md:px-12 bg-[#fafafa] relative border-b-2 border-black">
+    <section className="pt-40 pb-24 md:pt-48 md:pb-32 px-6 md:px-12 relative border-b-2 border-black overflow-hidden min-h-[80vh] flex items-center">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 z-0 opacity-[0.12]"
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=2000")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
         <div>
           <div className="inline-block border-2 border-black bg-white text-black text-xs font-bold uppercase tracking-widest px-3 py-1 mb-6 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 transition-transform">
             Accelerating Digital Growth
           </div>
-          <h1 className="text-5xl md:text-6xl lg:text-[5rem] font-black leading-[1.05] mb-6 text-black tracking-tighter uppercase">
+          <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-black leading-[1.05] mb-6 text-black tracking-tighter uppercase">
             Scale Faster.<br />
             Spend Smarter.<br />
             <span className="text-[#4A6FA5]">Grow Without Limits.</span>
           </h1>
-          <p className="text-lg text-gray-700 max-w-md mb-8 leading-snug font-medium">
+          <p className="text-base text-gray-700 max-w-md mb-8 leading-snug font-medium">
             Skip the guesswork. Book a free audit call and we'll show you exactly where your growth is leaking and how to fix it.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">

@@ -7,38 +7,63 @@ export default function Services() {
     {
       icon: <TrendingUp className="w-6 h-6 text-white" />,
       title: "PPC Advertising",
-      items: ["Google Search & Shopping", "Campaign architecture & bidding", "Conversion tracking", "Performance reports"]
+      description: "Stop wasting budget on low-intent keywords. We optimize for high-conversion traffic.",
+      items: ["Google Search & Shopping", "Campaign architecture & bidding", "Conversion tracking", "Performance reports"],
+      outcome: "3.5x Avg ROAS"
     },
     {
       icon: <Users className="w-6 h-6 text-white" />,
       title: "Social Media Ads",
-      items: ["Meta, TikTok & Snapchat", "Creative strategy", "Audience segmentation", "A/B testing frameworks"]
+      description: "Scale your brand with thumb-stopping creative and hyper-targeted audience segments.",
+      items: ["Meta, TikTok & Snapchat", "Creative strategy", "Audience segmentation", "A/B testing frameworks"],
+      outcome: "Lower CPA by 40%"
     },
     {
       icon: <Search className="w-6 h-6 text-white" />,
       title: "SEO Excellence",
-      items: ["Technical SEO audits", "Content strategy", "White-hat Link building", "Local SEO dominance"]
+      description: "Dominate search results with a technical foundation and content that actually ranks.",
+      items: ["Technical SEO audits", "Content strategy", "White-hat Link building", "Local SEO dominance"],
+      outcome: "+120% Organic Traffic"
     },
     {
       icon: <Layout className="w-6 h-6 text-white" />,
       title: "Social Management",
-      items: ["Content calendars", "Platform-native creation", "Community management", "Analytics & reporting"]
+      description: "Turn your social presence into a community that drives consistent brand loyalty.",
+      items: ["Content calendars", "Platform-native creation", "Community management", "Analytics & reporting"],
+      outcome: "Engagement +85%"
     },
     {
       icon: <Target className="w-6 h-6 text-white" />,
       title: "Conversion Opt.",
-      items: ["Landing page audits", "A/B & multivariate testing", "Heatmap analysis", "Funnel drop-off"]
+      description: "Fix the leaks in your funnel. We turn more visitors into paying customers.",
+      items: ["Landing page audits", "A/B & multivariate testing", "Heatmap analysis", "Funnel drop-off"],
+      outcome: "+25% Conv. Rate"
     },
     {
       icon: <BarChart3 className="w-6 h-6 text-white" />,
       title: "Data Analytics",
-      items: ["Custom dashboards", "Attribution modeling", "GA4 configuration", "ROI tracking"]
+      description: "Make decisions based on facts, not feelings. Clean data for clear growth.",
+      items: ["Custom dashboards", "Attribution modeling", "GA4 configuration", "ROI tracking"],
+      outcome: "Full Visibility"
     }
   ];
 
   return (
-    <section id="services" className="py-16 md:py-20 bg-white border-b-2 border-black px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="py-16 md:py-20 bg-white border-b-2 border-black px-6 md:px-12 relative overflow-hidden">
+      {/* Background Image with Low Opacity */}
+      <div 
+        className="absolute inset-0 z-0 opacity-[0.08] pointer-events-none"
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'grayscale(100%)',
+        }}
+      />
+      {/* Subtle background pattern for the whole section */}
+      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-10 max-w-2xl">
           <div className="inline-block bg-black text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-4">
             Capabilities
@@ -51,15 +76,44 @@ export default function Services() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, idx) => (
-            <div key={idx} className="bg-white p-6 border-2 border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(74,111,165,1)] transition-all duration-200 group">
-              <div className="w-12 h-12 bg-black flex items-center justify-center mb-5 group-hover:bg-[#4A6FA5] transition-colors">
-                {service.icon}
+            <div key={idx} className="bg-white p-8 border-2 border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(74,111,165,1)] transition-all duration-200 group relative overflow-hidden">
+              {/* Card Pattern with Fading Effect */}
+              <div className="absolute top-0 right-0 w-32 h-32 opacity-[0.08] group-hover:opacity-[0.15] transition-opacity pointer-events-none">
+                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <defs>
+                    <pattern id={`pattern-${idx}`} x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="black" strokeWidth="0.5"/>
+                    </pattern>
+                    <linearGradient id={`fade-${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="white" stopOpacity="1" />
+                      <stop offset="100%" stopColor="white" stopOpacity="0" />
+                    </linearGradient>
+                    <mask>
+                      <rect width="100" height="100" fill={`url(#fade-${idx})`} />
+                    </mask>
+                  </defs>
+                  <rect width="100" height="100" fill={`url(#pattern-${idx})`} style={{ mask: `url(#fade-${idx})`, WebkitMaskImage: `linear-gradient(to bottom left, black, transparent)` }} />
+                </svg>
               </div>
-              <h3 className="text-xl font-black text-black mb-4 uppercase">{service.title}</h3>
-              <ul className="space-y-2">
+
+              <div className="flex justify-between items-start mb-6">
+                <div className="w-12 h-12 bg-black flex items-center justify-center group-hover:bg-[#4A6FA5] transition-colors">
+                  {service.icon}
+                </div>
+                <div className="text-[10px] font-black uppercase tracking-widest text-[#C1272D] border-b border-[#C1272D] pb-0.5">
+                  {service.outcome}
+                </div>
+              </div>
+              
+              <h3 className="text-xl font-black text-black mb-3 uppercase">{service.title}</h3>
+              <p className="text-sm text-gray-600 mb-6 font-medium leading-relaxed">
+                {service.description}
+              </p>
+              
+              <ul className="space-y-2 mb-2">
                 {service.items.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-gray-700 text-sm font-medium">
-                    <span className="text-[#C1272D] font-bold">/</span>
+                  <li key={i} className="flex items-start gap-2 text-gray-700 text-xs font-bold uppercase tracking-tight">
+                    <span className="text-[#C1272D]">/</span>
                     {item}
                   </li>
                 ))}

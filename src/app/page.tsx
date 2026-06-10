@@ -1,65 +1,73 @@
-import Image from "next/image";
+"use client";
+
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="min-h-screen bg-[#fafafa] text-black font-sans selection:bg-[#C1272D] selection:text-white">
+      <Header />
+      <main>
+        <Hero />
+        
+        {/* Trusted By - Minimal Inline Section */}
+        <section className="py-8 border-b-2 border-black bg-white overflow-hidden flex items-center">
+          <div className="flex whitespace-nowrap animate-auto-scroll items-center gap-16 text-xl font-black text-gray-300 px-8 uppercase tracking-widest">
+            {[...Array(3)].map((_, i) => (
+              <div key={i} className="flex items-center gap-16">
+                <span className="hover:text-black transition-colors">TechFlow</span>
+                <span className="hover:text-black transition-colors">GlobalRetail</span>
+                <span className="hover:text-black transition-colors">NextGen</span>
+                <span className="hover:text-black transition-colors">ApexCorp</span>
+                <span className="hover:text-black transition-colors">Innovate</span>
+                <span className="hover:text-black transition-colors">Vertex</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <Services />
+        
+        {/* Process Section */}
+        <section id="process" className="py-16 md:py-20 bg-[#fafafa] border-b-2 border-black px-6 md:px-12">
+          <div className="max-w-7xl mx-auto">
+            <div className="inline-block bg-black text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-4">
+              The Process
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-black mb-4 tracking-tighter uppercase">What happens after you <span className="text-[#C1272D]">hit send</span></h2>
+            <p className="text-base text-gray-600 mb-10 max-w-2xl font-medium">No lengthy proposals before we understand your business. Here's exactly how it works.</p>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-white p-8 border-2 border-black relative overflow-hidden group hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200">
+                <div className="absolute -right-2 -top-2 text-8xl font-black text-gray-100 group-hover:text-[#4A6FA5]/20 transition-colors pointer-events-none">01</div>
+                <p className="text-xs font-bold tracking-widest text-gray-400 mb-4 relative z-10 uppercase">Step 01</p>
+                <h3 className="text-xl font-black mb-2 relative z-10 text-black uppercase">Book a discovery call</h3>
+                <p className="text-gray-600 relative z-10 text-sm font-medium">30 minutes. We ask the hard questions. You tell us what's broken.</p>
+              </div>
+              <div className="bg-white p-8 border-2 border-black relative overflow-hidden group hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200">
+                <div className="absolute -right-2 -top-2 text-8xl font-black text-gray-100 group-hover:text-[#4A6FA5]/20 transition-colors pointer-events-none">02</div>
+                <p className="text-xs font-bold tracking-widest text-gray-400 mb-4 relative z-10 uppercase">Step 02</p>
+                <h3 className="text-xl font-black mb-2 relative z-10 text-black uppercase">We audit your...</h3>
+                <p className="text-[#4A6FA5] font-black relative z-10 uppercase">Funnels & Analytics</p>
+              </div>
+              <div className="bg-white p-8 border-2 border-black relative overflow-hidden group hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200">
+                <div className="absolute -right-2 -top-2 text-8xl font-black text-gray-100 group-hover:text-[#4A6FA5]/20 transition-colors pointer-events-none">03</div>
+                <p className="text-xs font-bold tracking-widest text-gray-400 mb-4 relative z-10 uppercase">Step 03</p>
+                <h3 className="text-xl font-black mb-2 relative z-10 text-black uppercase">The verdict</h3>
+                <p className="text-gray-600 relative z-10 text-sm font-medium">We tell you the truth, show you the data, and see if we're the right fit.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <Projects />
+        <Contact />
       </main>
+      <Footer />
     </div>
   );
 }

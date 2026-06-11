@@ -5,6 +5,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Moksh Communication | Digital Marketing Agency in Bangalore",
   description: "Leading Digital Marketing Company in Bangalore. We specialize in SEO, Google Ads, Social Media Marketing, and Website Design.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({

@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-2 border-black flex justify-between items-center py-2 px-4 md:px-8 transition-transform duration-300">
-      <a href="/" className="relative w-44 h-16 md:w-56 md:h-20 -ml-2">
+      <a href="/" className="relative w-44 h-16 md:w-56 md:h-20 ml-36">
         <Image src="/logo.png" alt="Moksh Communication" fill className="object-contain object-left" priority />
       </a>
       <div className="hidden md:flex items-center gap-8 text-sm font-bold text-black uppercase tracking-wide">

@@ -9,42 +9,40 @@ export default function Services() {
       title: "PPC Advertising",
       description: "Stop wasting budget on low-intent keywords. We optimize for high-conversion traffic.",
       items: ["Google Search & Shopping", "Campaign architecture & bidding", "Conversion tracking", "Performance reports"],
-      outcome: "3.5x Avg ROAS"
+      outcome: "3.5x Avg ROAS",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
     },
     {
       icon: <Users className="w-6 h-6 text-white" />,
       title: "Social Media Ads",
       description: "Scale your brand with thumb-stopping creative and hyper-targeted audience segments.",
-      items: ["Meta, TikTok & Snapchat", "Creative strategy", "Audience segmentation", "A/B testing frameworks"],
-      outcome: "Lower CPA by 40%"
+      items: ["Meta & LinkedIn", "Creative strategy", "Audience segmentation", "A/B testing frameworks"],
+      outcome: "Lower CPA by 40%",
+      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800"
     },
     {
       icon: <Search className="w-6 h-6 text-white" />,
       title: "SEO Excellence",
       description: "Dominate search results with a technical foundation and content that actually ranks.",
-      items: ["Technical SEO audits", "Content strategy", "White-hat Link building", "Local SEO dominance"],
-      outcome: "+120% Organic Traffic"
+      items: ["Technical SEO audits", "Content strategy", "White-hat Link building", "Keyword Research & On-Page SEO"],
+      outcome: "+120% Organic Traffic",
+      image: "/seo.jpg"
     },
     {
       icon: <Layout className="w-6 h-6 text-white" />,
       title: "Social Management",
-      description: "Turn your social presence into a community that drives consistent brand loyalty.",
-      items: ["Content calendars", "Platform-native creation", "Community management", "Analytics & reporting"],
-      outcome: "Engagement +85%"
+      description: "We help you stay active on social media, engage with your audience, and turn followers into customers.",
+      items: ["Content calendars", "Platform-native creation", "Audience Engagement", "Monthly Performance Reports"],
+      outcome: "Engagement +85%",
+      image: "/social-media.jpg"
     },
     {
       icon: <Target className="w-6 h-6 text-white" />,
-      title: "Conversion Opt.",
-      description: "Fix the leaks in your funnel. We turn more visitors into paying customers.",
-      items: ["Landing page audits", "A/B & multivariate testing", "Heatmap analysis", "Funnel drop-off"],
-      outcome: "+25% Conv. Rate"
-    },
-    {
-      icon: <BarChart3 className="w-6 h-6 text-white" />,
-      title: "Data Analytics",
-      description: "Make decisions based on facts, not feelings. Clean data for clear growth.",
-      items: ["Custom dashboards", "Attribution modeling", "GA4 configuration", "ROI tracking"],
-      outcome: "Full Visibility"
+      title: "Google Business Profile Optimization",
+      description: "Get More Calls & Enquiries from Google Maps",
+      items: ["Profile Setup & Optimization", "Business Information Updates", "Review Management & Growth Strategies", "Google Posts & Regular Updates"],
+      outcome: "More Enquiries",
+      image: "/gmb.png"
     }
   ];
 
@@ -68,9 +66,9 @@ export default function Services() {
           <div className="inline-block bg-black text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-4">
             Capabilities
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-black mb-4 tracking-tighter uppercase">Built for <span className="text-[#C1272D]">ROI.</span></h2>
+          <h2 className="text-4xl md:text-5xl font-black text-black mb-4 tracking-tighter uppercase">More Leads. More Customers. <span className="text-[#C1272D]">More Growth.</span></h2>
           <p className="text-base text-gray-600 font-medium">
-            Every service we offer is tied to a metric that actually matters to your business. No vanity metrics.
+            We help businesses generate quality enquiries through Google Ads, Meta Ads, SEO, and high-converting websites—turning marketing spend into measurable business growth.
           </p>
         </div>
 
@@ -88,11 +86,11 @@ export default function Services() {
                       <stop offset="0%" stopColor="white" stopOpacity="1" />
                       <stop offset="100%" stopColor="white" stopOpacity="0" />
                     </linearGradient>
-                    <mask>
+                    <mask id={`mask-${idx}`}>
                       <rect width="100" height="100" fill={`url(#fade-${idx})`} />
                     </mask>
                   </defs>
-                  <rect width="100" height="100" fill={`url(#pattern-${idx})`} style={{ mask: `url(#fade-${idx})`, WebkitMaskImage: `linear-gradient(to bottom left, black, transparent)` }} />
+                  <rect width="100" height="100" fill={`url(#pattern-${idx})`} style={{ mask: `url(#mask-${idx})`, WebkitMaskImage: `linear-gradient(to bottom left, black, transparent)` }} />
                 </svg>
               </div>
 
@@ -105,10 +103,15 @@ export default function Services() {
                 </div>
               </div>
               
-              <h3 className="text-xl font-black text-black mb-3 uppercase">{service.title}</h3>
+              <h3 className="text-xl font-black text-black mb-3 uppercase leading-tight">{service.title}</h3>
               <p className="text-sm text-gray-600 mb-6 font-medium leading-relaxed">
                 {service.description}
               </p>
+
+              {/* Client requested image */}
+              <div className="mb-6 h-32 w-full border-2 border-black overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+                <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+              </div>
               
               <ul className="space-y-2 mb-2">
                 {service.items.map((item, i) => (

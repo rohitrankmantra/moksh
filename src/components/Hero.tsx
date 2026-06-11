@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
         <div>
           <div className="inline-block border-2 border-black bg-white text-black text-xs font-bold uppercase tracking-widest px-3 py-1 mb-6 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 transition-transform">
-            Accelerating Digital Growth
+            Accelerating Business Growth Through Digital Marketing
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-black leading-[1.05] mb-6 text-black tracking-tighter uppercase">
             Scale Faster.<br />
@@ -23,7 +23,7 @@ export default function Hero() {
             <span className="text-[#4A6FA5]">Grow Without Limits.</span>
           </h1>
           <p className="text-base text-gray-700 max-w-md mb-8 leading-snug font-medium">
-            Skip the guesswork. Book a free audit call and we'll show you exactly where your growth is leaking and how to fix it.
+            Bangalore-based digital marketing agency helping businesses increase enquiries, calls and revenue.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="#contact" className="inline-flex justify-center items-center bg-black text-white font-bold px-8 py-3 border-2 border-black hover:bg-white hover:text-black transition-all uppercase tracking-wide shadow-[4px_4px_0px_0px_rgba(193,39,45,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
@@ -43,14 +43,14 @@ export default function Hero() {
           <h3 className="text-2xl font-black text-black mb-2 uppercase">Let's talk numbers</h3>
           <p className="text-sm text-gray-600 mb-6 font-medium">Free 30 minutes audit call. No fluff, just a real audit.</p>
           
-          <form className="space-y-4">
+          <form className="space-y-4" action="https://formspree.io/f/chand.mahaveer@gmail.com" method="POST">
             <div className="grid grid-cols-2 gap-4">
-              <input type="text" placeholder="FIRST NAME" className="w-full bg-white border-2 border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors font-bold placeholder-gray-400" required />
-              <input type="text" placeholder="LAST NAME" className="w-full bg-white border-2 border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors font-bold placeholder-gray-400" required />
+              <input type="text" name="first_name" placeholder="FIRST NAME" className="w-full bg-white border-2 border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors font-bold placeholder-gray-400" required />
+              <input type="text" name="last_name" placeholder="LAST NAME" className="w-full bg-white border-2 border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors font-bold placeholder-gray-400" required />
             </div>
-            <input type="email" placeholder="WORK EMAIL" className="w-full bg-white border-2 border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors font-bold placeholder-gray-400" required />
-            <input type="tel" placeholder="PHONE NUMBER" className="w-full bg-white border-2 border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors font-bold placeholder-gray-400" required />
-            <input type="text" placeholder="COMPANY URL" className="w-full bg-white border-2 border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors font-bold placeholder-gray-400" />
+            <input type="email" name="email" placeholder="WORK EMAIL" className="w-full bg-white border-2 border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors font-bold placeholder-gray-400" required />
+            <input type="tel" name="phone" placeholder="PHONE NUMBER" className="w-full bg-white border-2 border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors font-bold placeholder-gray-400" required />
+            <input type="text" name="company_url" placeholder="COMPANY URL" className="w-full bg-white border-2 border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors font-bold placeholder-gray-400" />
             <button type="submit" className="w-full bg-[#4A6FA5] text-white font-black py-3 border-2 border-[#4A6FA5] hover:bg-white hover:text-[#4A6FA5] transition-colors uppercase tracking-widest mt-2">
               Get Your Audit
             </button>

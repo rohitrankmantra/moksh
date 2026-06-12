@@ -175,7 +175,7 @@ export default function Home() {
           </a>
           <a 
             href="tel:+919740666660" 
-            className="w-14 h-14 bg-black text-white flex items-center justify-center border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all"
+            className="w-14 h-14 bg-[#4A6FA5] text-white flex items-center justify-center border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all"
             title="Call Us"
           >
             <svg className="w-8 h-8 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

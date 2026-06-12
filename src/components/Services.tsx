@@ -72,9 +72,9 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {services.map((service, idx) => (
-            <div key={idx} className="bg-white p-8 border-2 border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(74,111,165,1)] transition-all duration-200 group relative overflow-hidden">
+            <div key={idx} className="bg-white p-8 border-2 border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(74,111,165,1)] transition-all duration-200 group relative overflow-hidden flex flex-col h-full">
               {/* Card Pattern with Fading Effect */}
               <div className="absolute top-0 right-0 w-32 h-32 opacity-[0.08] group-hover:opacity-[0.15] transition-opacity pointer-events-none">
                 <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -109,11 +109,11 @@ export default function Services() {
               </p>
 
               {/* Client requested image */}
-              <div className="mb-6 h-32 w-full border-2 border-black overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+              <div className="mb-6 h-40 w-full border-2 border-black overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
                 <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
               </div>
               
-              <ul className="space-y-2 mb-2">
+              <ul className="space-y-2 mb-2 mt-auto">
                 {service.items.map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-gray-700 text-xs font-bold uppercase tracking-tight">
                     <span className="text-[#C1272D]">/</span>

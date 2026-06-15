@@ -9,8 +9,8 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-2 border-black transition-transform duration-300">
       <div className="max-w-7xl mx-auto px-4 md:px-12 flex justify-between items-center py-2">
-        <a href="/" className="relative w-44 h-16 md:w-56 md:h-20">
-          <Image src="/logo.png" alt="Moksh Communication" fill className="object-contain object-left" priority />
+        <a href="/" className="relative w-44 h-16 md:w-56 md:h-20 group">
+          <Image src="/logo.png" alt="Moksh Communication" fill className="object-contain object-left md:grayscale md:group-hover:grayscale-0 transition-all duration-500" priority />
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm font-bold text-black uppercase tracking-wide">
           <a href="#services" className="hover:text-[#C1272D] transition-colors relative group">

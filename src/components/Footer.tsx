@@ -22,12 +22,12 @@ const LinkedinIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-black py-12 px-6 md:px-12 border-t-2 border-black">
+    <footer className="bg-[#1a1a1a] text-white py-12 px-6 md:px-12 border-t-2 border-black">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
           {/* Logo Section */}
-          <a href="/" className="relative w-56 h-20 md:w-64 md:h-24">
-            <Image src="/logo.png" alt="Moksh Communication" fill className="object-contain object-left" priority />
+          <a href="/" className="relative w-auto h-auto bg-white p-4 md:p-6 border-2 border-black inline-flex items-center justify-center group">
+            <Image src="/logo.png" alt="Moksh Communication" width={180} height={60} className="object-contain md:grayscale md:group-hover:grayscale-0 transition-all duration-500" priority />
           </a>
           
           {/* Legal Links */}
@@ -42,7 +42,7 @@ export default function Footer() {
               href="https://instagram.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-10 h-10 bg-black text-white flex items-center justify-center border-2 border-black hover:bg-white hover:text-black transition-all"
+              className="w-10 h-10 bg-white text-black flex items-center justify-center border-2 border-white hover:bg-black hover:text-white transition-all"
               aria-label="Instagram"
             >
               <InstagramIcon />
@@ -51,7 +51,7 @@ export default function Footer() {
               href="https://facebook.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-10 h-10 bg-black text-white flex items-center justify-center border-2 border-black hover:bg-white hover:text-black transition-all"
+              className="w-10 h-10 bg-white text-black flex items-center justify-center border-2 border-white hover:bg-black hover:text-white transition-all"
               aria-label="Facebook"
             >
               <FacebookIcon />
@@ -60,7 +60,7 @@ export default function Footer() {
               href="https://linkedin.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-10 h-10 bg-black text-white flex items-center justify-center border-2 border-black hover:bg-white hover:text-black transition-all"
+              className="w-10 h-10 bg-white text-black flex items-center justify-center border-2 border-white hover:bg-black hover:text-white transition-all"
               aria-label="LinkedIn"
             >
               <LinkedinIcon />
@@ -70,7 +70,7 @@ export default function Footer() {
         
         {/* Copyright - Bottom Center */}
         <div className="text-center">
-          <p className="text-xs text-gray-600 font-bold uppercase tracking-wider">
+          <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">
             © {new Date().getFullYear()} Moksh Communication. All rights reserved.
           </p>
         </div>

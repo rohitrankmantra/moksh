@@ -109,8 +109,12 @@ export default function Services() {
               </p>
 
               {/* Client requested image */}
-              <div className="mb-6 h-40 w-full border-2 border-black overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
-                <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+              <div className="mb-6 h-40 w-full border-2 border-black overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title} 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
+                />
               </div>
               
               <ul className="space-y-2 mb-2 mt-auto">

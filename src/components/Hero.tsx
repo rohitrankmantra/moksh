@@ -18,6 +18,26 @@ export default function Hero() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Function to send WhatsApp message
+  const sendWhatsAppMessage = (phone: string, name: string) => {
+    // Format phone number - remove any non-digit characters
+    const formattedPhone = phone.replace(/\D/g, "");
+    // Ensure it starts with country code (default to 91 for India)
+    const phoneWithCountryCode = formattedPhone.startsWith("91") 
+      ? formattedPhone 
+      : `91${formattedPhone}`;
+    
+    // WhatsApp message
+    const message = `Hello ${name}! Thank you for booking a free audit with Moksh Communication. We have received your request and will get back to you soon to schedule your audit.`;
+    // URL encode the message
+    const encodedMessage = encodeURIComponent(message);
+    // Create WhatsApp Click-to-Chat URL
+    const whatsappUrl = `https://wa.me/${phoneWithCountryCode}?text=${encodedMessage}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, "_blank");
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -31,6 +51,12 @@ export default function Hero() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
       setSubmitStatus("success");
+      
+      // Send WhatsApp message if phone number is provided
+      if (formData.phone) {
+        sendWhatsAppMessage(formData.phone, formData.first_name);
+      }
+      
       setFormData({
         first_name: "",
         last_name: "",
@@ -71,7 +97,7 @@ export default function Hero() {
             Bangalore-based digital marketing agency helping businesses increase enquiries, calls and revenue.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="#contact" className="inline-flex justify-center items-center bg-black text-white font-bold px-8 py-3 border-2 border-black hover:bg-white hover:text-black transition-all uppercase tracking-wide shadow-[4px_4px_0px_0px_rgba(193,39,45,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 cursor-pointer">
+            <a href="#audit-form" className="inline-flex justify-center items-center bg-black text-white font-bold px-8 py-3 border-2 border-black hover:bg-white hover:text-black transition-all uppercase tracking-wide shadow-[4px_4px_0px_0px_rgba(193,39,45,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 cursor-pointer">
               Book a Free Audit
             </a>
             <a href="#services" className="inline-flex justify-center items-center bg-white text-black border-2 border-black font-bold px-8 py-3 hover:bg-gray-100 transition-all uppercase tracking-wide">
@@ -148,7 +174,10 @@ export default function Hero() {
               {isSubmitting ? "Sending..." : "Get Your Audit"}
             </button>
             {submitStatus === "success" && (
-              <p className="text-green-600 font-bold text-center">Thank you! We'll be in touch soon.</p>
+              <div className="text-center space-y-2">
+                <p className="text-green-600 font-bold">Thank you! We'll be in touch soon.</p>
+                <p className="text-sm text-gray-600">A WhatsApp message has been opened for you to send a thank you note.</p>
+              </div>
             )}
             {submitStatus === "error" && (
               <p className="text-red-600 font-bold text-center">Oops! Something went wrong. Please try again.</p>

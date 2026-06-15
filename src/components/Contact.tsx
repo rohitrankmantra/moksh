@@ -25,11 +25,16 @@ export default function Contact() {
     setSubmitStatus("idle");
 
     try {
+      // Old credentials (saved for reference)
+      // Service ID: service_a7nwr7j
+      // Template ID: template_eeiew48
+      // Public Key: gS5TDsYALA9p_GJuQ
+      
       await emailjs.send(
-        "service_a7nwr7j",
-        "template_eeiew48",
+        "service_lkk4c3u",
+        "template_7km4twm",
         formData,
-        "gS5TDsYALA9p_GJuQ"
+        "D3vhF2DBKAIdtmTN-"
       );
       setSubmitStatus("success");
       setFormData({

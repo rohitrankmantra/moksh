@@ -78,7 +78,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto bg-white border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
         <div className="grid lg:grid-cols-5">
           {/* Contact Info Side */}
-          <div className="lg:col-span-2 bg-[#4A6FA5] p-8 md:p-12 text-white flex flex-col justify-between border-b-2 lg:border-b-0 lg:border-r-2 border-black relative">
+          <div className="lg:col-span-2 bg-primary p-8 md:p-12 text-white flex flex-col justify-between border-b-2 lg:border-b-0 lg:border-r-2 border-black relative">
             {/* Decorative element */}
             <div className="absolute top-0 right-0 w-16 h-16 bg-black opacity-10"></div>
             
@@ -211,7 +211,7 @@ export default function Contact() {
               </div>
               <button 
                 type="submit" 
-                className="bg-[#C1272D] text-white font-black px-8 py-3 border-2 border-[#C1272D] hover:bg-white hover:text-[#C1272D] transition-colors w-full sm:w-auto uppercase tracking-widest mt-2 disabled:opacity-50"
+                className="bg-secondary text-white font-black px-8 py-3 border-2 border-[#C1272D] hover:bg-white hover:text-[#C1272D] transition-colors w-full sm:w-auto uppercase tracking-widest mt-2 disabled:opacity-50"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}

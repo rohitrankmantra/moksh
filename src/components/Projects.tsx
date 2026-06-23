@@ -41,7 +41,7 @@ export default function Projects() {
                 src={project.logo}
                 alt={project.name}
                 fill
-                className="object-contain p-4 grayscale group-hover:grayscale-0 transition-all duration-500"
+                className="object-contain p-4 md:grayscale md:group-hover:grayscale-0 transition-all duration-500"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-black text-white text-[10px] font-bold uppercase py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity text-center">
                 {project.name}

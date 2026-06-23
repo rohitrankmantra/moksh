@@ -133,7 +133,7 @@ export default function Home() {
             
             <div className="space-y-4">
               {faqs.map((faq, idx) => (
-                <div key={idx} className="bg-white border-2 border-black overflow-hidden transition-all group">
+                <div key={idx} className="bg-white border-2 border-black overflow-hidden transition-all duration-200 group hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(74,111,165,1)]">
                   <button 
                     onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                     className="w-full flex justify-between items-center p-6 md:p-8 text-left hover:bg-gray-50 transition-colors"
@@ -161,7 +161,7 @@ export default function Home() {
         </section>
 
         {/* Floating Contact Buttons */}
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+        <div className="fixed bottom-6 left-6 z-50 flex flex-col gap-4">
           <a 
             href="https://wa.me/919740666660" 
             target="_blank" 
